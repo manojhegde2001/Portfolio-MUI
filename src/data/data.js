@@ -7,11 +7,11 @@ export const Bio = {
     ],
     description: 
     "I am a motivated and versatalie individual, always ready and eager to leran new things and take on new challenges. With a passion for learning I am dedicated to deleviring a high quality results. I believe in having positive attitude and growth mindset. I am ready to make a meaningful contribution and achieve great things in this path.",
-    github: "https://github.com/praneethk2401",
+    github: "https://github.com/manojhegde2001",
     linkedin: "https://www.linkedin.com/in/Praneeth-Kulkarni/",
     twitter: "https://twitter.com/PraneethKu2401?t=_0V8ybd7--i61EK0fGVSoQ&s=09",
     email:"mailto:manojhegde2001@gmail.com",
-    resume: "https://drive.google.com/file/d/1d3f61gbcSi4sGE2xk8HDf2w0sa7cmlbl/view?usp=drive_link",
+    resume: "https://drive.google.com/file/d/1h4SjTMZ6ff1WSfBI3i-Q8nQZTP54j9KS/view?usp=drive_link",
 
 };
 
