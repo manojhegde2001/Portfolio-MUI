@@ -13,7 +13,7 @@ const Navbar = () => {
       <NavbarContainer>
         <NavLogo to='/'>
           <a style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer' }}>
-            <GiAbstract111 size="3rem" /> <Span>Praneeth Kulkarni</Span>
+            <GiAbstract111 size="3rem" /> <Span>Manoj Hegde</Span>
           </a>
         </NavLogo>
         <MobileIcon>

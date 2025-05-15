@@ -1,5 +1,5 @@
 export const Bio = {
-    name: 'Praneeth Kulkarni',
+    name: 'Manoj Hegde',
     roles: [
         "Full Stack Developer",
         "Programmer",
@@ -10,7 +10,7 @@ export const Bio = {
     github: "https://github.com/praneethk2401",
     linkedin: "https://www.linkedin.com/in/Praneeth-Kulkarni/",
     twitter: "https://twitter.com/PraneethKu2401?t=_0V8ybd7--i61EK0fGVSoQ&s=09",
-    email:"mailto:praneeth.u.k@gmail.com",
+    email:"mailto:manojhegde2001@gmail.com",
     resume: "https://drive.google.com/file/d/1d3f61gbcSi4sGE2xk8HDf2w0sa7cmlbl/view?usp=drive_link",
 
 };

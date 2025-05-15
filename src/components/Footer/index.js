@@ -87,7 +87,7 @@ function Footer() {
   return (
     <FooterContainer>
       <FooterWrapper>
-        <Logo>Praneeth Kulkarni</Logo>
+        <Logo>Manoj Hegde</Logo>
         <Nav>
           <NavLink href="#about">About</NavLink>
           <NavLink href="#skills">Skills</NavLink>
@@ -100,7 +100,7 @@ function Footer() {
           <SocialMediaIcon href={Bio.github} target="display"><GitHubIcon /></SocialMediaIcon>
         </SocialMediaIcons>
         <Copyright>
-          &copy; 2023 Praneeth Kulkarni. All rights reserved.
+          &copy; 2023 Manoj Hegde. All rights reserved.
         </Copyright>
 
       </FooterWrapper>
