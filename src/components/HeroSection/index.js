@@ -5,12 +5,14 @@ import HeroImg from '../../images/ProfileImg.jpeg'
 import Typewriter from 'typewriter-effect';
 import { Bio } from '../../data/data';
 import { motion } from 'framer-motion';
-import { fadeIn, zoomIn, staggerContainer } from '../../utils/motion';
+import { fadeIn, staggerContainer } from '../../utils/motion';
+import StarCanvas from '../StarCanvas';
 
 const HeroSection = () => {
     return (
         <div id="about">
             <HeroContainer>
+                <StarCanvas />
                 <HeroBg>
                     <HeroBgAnimation />
                 </HeroBg>
