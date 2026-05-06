@@ -73,6 +73,18 @@ const Image = styled.img`
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
 `;
 
+const Iframe = styled.iframe`
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    border: none;
+    @media only screen and (max-width: 600px) {
+        height: 250px;
+    }
+`;
+
 const Label = styled.div`
     font-size: 20px;
     font-weight: 600;
@@ -197,7 +209,11 @@ const index = ({ openModal, setOpenModal }) => {
                         }}
                         onClick={() => setOpenModal({ state: false, project: null })}
                     />
-                    <Image src={project?.image} />
+                    {project?.webapp ? (
+                        <Iframe src={project?.webapp} title={project?.title} />
+                    ) : (
+                        <Image src={project?.image} />
+                    )}
                     <Title>{project?.title}</Title>
                     <Date>{project.date}</Date>
                     <Tags>
