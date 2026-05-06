@@ -19,6 +19,7 @@ align-items: center;
 flex-direction: column;
 width: 100%;
 max-width: 1100px;
+padding: 10px 0 100px 0;
 gap: 12px;
 @media (max-width: 960px) {
     flex-direction: column;
