@@ -195,11 +195,17 @@ export const ResumeButton = styled.a`
         box-shadow: 0px 15px 40px -10px rgba(133, 76, 230, 0.8);
         filter: brightness(1.1);
     }    
-    
-    
+
+    @media (max-width: 960px) {
+        display: block;
+        margin: 0 auto;
+    }
+
     @media (max-width: 640px) {
         padding: 12px 0;
         font-size: 18px;
+        display: block;
+        margin: 0 auto;
     } 
 
 `;

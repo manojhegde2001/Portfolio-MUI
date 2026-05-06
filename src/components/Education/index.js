@@ -96,10 +96,10 @@ const index = () => {
                         </Desc>
                     </motion.div>
                     <TimelineSection>
-                        <Timeline>
+                        <Timeline sx={{ padding: '0', margin: '0', width: '100%' }}>
                             {education.map((education,index) => (
-                                <TimelineItem key={index}>
-                                    <TimelineContent sx={{ py: '12px', px: 2 }}>
+                                <TimelineItem key={index} sx={{ '&::before': { display: 'none' }, justifyContent: 'center' }}>
+                                    <TimelineContent sx={{ py: '12px', px: 2, flex: 'unset', width: '100%', maxWidth: '800px' }}>
                                         <motion.div variants={fadeIn("up", "spring", index * 0.1 + 0.2, 0.8)}>
                                             <EducationCard education={education}/>
                                         </motion.div>
