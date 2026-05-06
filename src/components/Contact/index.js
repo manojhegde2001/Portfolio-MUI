@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { useRef } from 'react';
 import emailjs from "@emailjs/browser";
 import { Snackbar } from '@mui/material';
+import { motion } from 'framer-motion';
+import { fadeIn, staggerContainer, slideIn } from '../../utils/motion';
 
 const Container = styled.div`
 display: flex;
@@ -115,7 +117,7 @@ const ContactButton = styled.button`
   margin-top: 2px;
   border-radius: 12px;
   border: none;
-  color: ${({ theme }) => theme.text_primary};
+  color: white;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
@@ -144,17 +146,28 @@ const Contact = () => {
 
   return (
     <Container>
-      <Wrapper>
-        <Title>Contact</Title>
-        <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
-        <ContactForm ref={form} onSubmit={handleSubmit}>
-          <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" rows="4" name="message" />
-          <ContactButton onClick={handleSubmit} type="submit" value="Send"> Send </ContactButton>
-        </ContactForm>
+      <motion.div
+        variants={staggerContainer(0.1, 0.1)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.1 }}
+        style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}
+      >
+        <Wrapper>
+          <motion.div variants={fadeIn("up", "spring", 0.1, 1)} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <Title>Contact</Title>
+            <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
+          </motion.div>
+          <motion.div variants={fadeIn("up", "spring", 0.2, 1)} style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+            <ContactForm ref={form} onSubmit={handleSubmit}>
+              <ContactTitle>Email Me 🚀</ContactTitle>
+              <ContactInput placeholder="Your Email" name="from_email" />
+              <ContactInput placeholder="Your Name" name="from_name" />
+              <ContactInput placeholder="Subject" name="subject" />
+              <ContactInputMessage placeholder="Message" rows="4" name="message" />
+              <ContactButton onClick={handleSubmit} type="submit" value="Send"> Send </ContactButton>
+            </ContactForm>
+          </motion.div>
         <Snackbar
           open={open}
           autoHideDuration={6000}
@@ -163,6 +176,7 @@ const Contact = () => {
           severity="success"
         />
       </Wrapper>
+      </motion.div>
     </Container>
   )
 }

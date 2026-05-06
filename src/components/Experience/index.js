@@ -6,8 +6,8 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import { education } from '../../data/data';
-import EducationCard from '../Cards/EducationCard';
+import ExperienceCard from '../Cards/ExperienceCard';
+import { experience } from '../../data/data';
 import { motion } from 'framer-motion';
 import { fadeIn, staggerContainer } from '../../utils/motion';
 
@@ -18,7 +18,7 @@ const Container = styled.div`
     position: relative;
     z-index: 1;
     align-items: center;
-    padding: 0px 0px 60px 0px;
+    padding: 40px 0px 80px 0px;
     @media (max-width: 960px) {
         padding: 0px;
     }
@@ -32,7 +32,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     width: 100%;
     max-width: 1350px;
-    padding: 40px 0px 0px 0px;
+    padding: 80px 0;
     gap: 12px;
     @media (max-width: 960px) {
         flex-direction: column;
@@ -64,23 +64,18 @@ const Desc = styled.div`
 
 const TimelineSection = styled.div`
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    @media (max-width: 660px) {
-        align-items: end;
-    }
 `;
 
-
-
-const index = () => {
+const Experience = () => {
     return (
-        <Container id="education">
+        <Container id="experience">
             <motion.div
                 variants={staggerContainer(0.1, 0.1)}
                 initial="hidden"
@@ -90,23 +85,24 @@ const index = () => {
             >
                 <Wrapper>
                     <motion.div variants={fadeIn("up", "spring", 0.1, 1)} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                        <Title>Education</Title>
+                        <Title>Experience</Title>
                         <Desc>
-                            My education has been a journey of self-discovery and growth. My educational details are as follows.
+                            My work experience as a software engineer and working on different companies and projects.
                         </Desc>
                     </motion.div>
                     <TimelineSection>
-                        <Timeline>
-                            {education.map((education,index) => (
-                                <TimelineItem key={index}>
-                                    <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                        <motion.div variants={fadeIn("up", "spring", index * 0.1 + 0.2, 0.8)}>
-                                            <EducationCard education={education}/>
-                                        </motion.div>
-                                    </TimelineContent>
+                        <Timeline sx={{ padding: '0', margin: '0', width: '100%' }}>
+                            {experience.map((exp, index) => (
+                                <TimelineItem key={index} sx={{ '&::before': { display: 'none' }, justifyContent: 'center' }}>
                                     <TimelineSeparator>
                                         <TimelineDot variant="outlined" color="secondary" />
+                                        {index !== experience.length - 1 && <TimelineConnector style={{ background: '#854CE6' }} />}
                                     </TimelineSeparator>
+                                    <TimelineContent sx={{ py: '12px', px: 2, flex: 'unset', width: '100%', maxWidth: '800px' }}>
+                                        <motion.div variants={fadeIn("up", "spring", index * 0.1 + 0.2, 0.8)}>
+                                            <ExperienceCard experience={exp}/>
+                                        </motion.div>
+                                    </TimelineContent>
                                 </TimelineItem>
                             ))}
                         </Timeline>
@@ -117,4 +113,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Experience

@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { skills } from '../../data/data'
+import { motion } from 'framer-motion'
+import { fadeIn, staggerContainer } from '../../utils/motion'
 
 const Container = styled.div`
 display: flex;
@@ -50,31 +52,27 @@ export const Desc = styled.div`
 
 const SkillsContainer = styled.div`
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   margin-top: 30px;
   gap: 30px;
-  justify-content: center;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const Skill = styled.div`
   width: 100%;
-  max-width: 500px;
+  height: 100%;
   background: ${({ theme }) => theme.card};
   border: 0.1px solid #854CE6;
   box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
   border-radius: 16px;
   padding: 18px 36px;
+  box-sizing: border-box;
   @media (max-width: 768px) {
-    max-width: 400px;
-    padding: 10px 36px;
+    padding: 14px 24px;
   }
-  @media (max-width: 500px) {
-    max-width: 330px;
-    padding: 10px 36px;
-  }
-
-
 `
 
 const SkillTitle = styled.h2`
@@ -123,27 +121,37 @@ const SkillImage = styled.img`
 const Skills = () => {
   return (
     <Container id="skills">
-      <Wrapper>
-        <Title>Skills</Title>
-        <Desc>Here are some of my skills on which I have been working on for the past 3 years.
-        </Desc>
-        <SkillsContainer>
-          {skills.map((skill) => (
-            <Skill>
-              <SkillTitle>{skill.title}</SkillTitle>
-              <SkillList>
-                {skill.skills.map((item) => (
-                  <SkillItem>
-                    <SkillImage src={item.image}/>
-                    {item.name}
-                  </SkillItem>
-                ))}
-              </SkillList>
-            </Skill>
-          ))}
-
-        </SkillsContainer>
-      </Wrapper>
+      <motion.div
+        variants={staggerContainer(0.1, 0.1)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.1 }}
+        style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}
+      >
+        <Wrapper>
+          <motion.div variants={fadeIn("up", "spring", 0.1, 1)} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <Title>Skills</Title>
+            <Desc>Here are some of my skills on which I have been working on for the past 3 years.</Desc>
+          </motion.div>
+          <SkillsContainer style={{ width: "100%" }}>
+            {skills.map((skill, index) => (
+              <motion.div variants={fadeIn("up", "spring", index * 0.1 + 0.2, 0.8)} key={index} style={{ width: "100%", height: "100%" }}>
+                <Skill>
+                  <SkillTitle>{skill.title}</SkillTitle>
+                  <SkillList>
+                    {skill.skills.map((item, idx) => (
+                      <SkillItem key={idx}>
+                        <SkillImage src={item.image}/>
+                        {item.name}
+                      </SkillItem>
+                    ))}
+                  </SkillList>
+                </Skill>
+              </motion.div>
+            ))}
+          </SkillsContainer>
+        </Wrapper>
+      </motion.div>
     </Container>
   )
 }

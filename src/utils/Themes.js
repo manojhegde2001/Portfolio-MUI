@@ -18,5 +18,8 @@ export const lightTheme = {
     text_primary:"#111111",
     text_secondary:"#48494a",
     card:"#FFFFFF",
+    card_light: "#f9f9f9",
     button:"#5c5b5b",
+    white:"#FFFFFF",
+    black:"#000000",
 }

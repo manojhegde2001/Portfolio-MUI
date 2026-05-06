@@ -216,3 +216,17 @@ export const MobileNavLogo = styled(LinkR)`
     padding: 0 0px;
   }
 `;
+
+export const ThemeButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.text_primary};
+  cursor: pointer;
+  padding: 0 16px;
+  transition: all 0.2s ease-in-out;
+  :hover {
+    color: ${({ theme }) => theme.primary};
+  }
+`;

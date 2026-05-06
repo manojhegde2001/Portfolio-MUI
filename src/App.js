@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import HeroSection from "./components/HeroSection/index.js";
 import About from "./components/About/index.js";
 import Skills from "./components/Skills/index.js";
+import Experience from "./components/Experience/index.js";
 import Projects from "./components/Projects/index.js";
 import Contact from "./components/Contact/index.js";
 import Footer from "./components/Footer/index.js";
@@ -32,11 +33,12 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Router >
-        <Navbar />
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Body>
           <HeroSection />
           <Wrapper>
             <Skills />
+            <Experience />
           </Wrapper>
           <Projects openModal={openModal} setOpenModal={setOpenModal} />
           <Wrapper>
