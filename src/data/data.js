@@ -217,9 +217,9 @@ export const projects = [
   },
   {
     id: 1,
-    title: "Group Ad Platform",
+    title: "Vrutta ",
     date: "2023 – Present",
-    description: "Group Ad is an Enterprise Social Networking platform designed to connect professionals and businesses in a curated environment. It features scalable RESTful APIs, JWT-based authentication with refresh token rotation, and server-side pagination, improving API response times by 35%.",
+    description: "Vrutta is an Enterprise Social Networking platform designed to connect professionals and businesses in a curated environment. It features scalable RESTful APIs, JWT-based authentication with refresh token rotation, and server-side pagination, improving API response times by 35%.",
     image: "group_ad.png",
     tags: [
       "Next.js",
@@ -233,7 +233,7 @@ export const projects = [
     ],
     category: "Web app",
     github: "https://github.com/manojhegde2001/group-ad",
-    webapp: "https://groupad.net",
+    webapp: "https://vrutta.net",
   },
   {
     id: 2,
