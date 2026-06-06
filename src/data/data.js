@@ -181,7 +181,7 @@ export const education = [
     school: "M S Ramaiah University of Applied Sciences, Bengaluru",
     date: "Aug 2019 - Jun 2023",
     grade: "7.6 CGPA",
-    desc: "I am a B.Tech graduate student in Computer Science and Engineering from M S Ramaiah University of Applied Sciences, Bengaluru. I have completed my engineering with an overall CGPA of 8.55. I have taken courses such as Data Structures, Algorithms, Object-Oriented Programming, Database Management systems, Operating Systems and Computer Networks among others. I have applied all my learning in my college days in building some applications end-to-end which are all listed in my projects section, you can have a look there too.",
+    desc: "I am a B.Tech graduate student in Computer Science and Engineering from M S Ramaiah University of Applied Sciences, Bengaluru. I have completed my engineering with an overall CGPA of 7.6. I have taken courses such as Data Structures, Algorithms, Object-Oriented Programming, Database Management systems, Operating Systems and Computer Networks among others. I have applied all my learning in my college days in building some applications end-to-end which are all listed in my projects section, you can have a look there too.",
     degree: "Bachelors of Technology - B.Tech, Computer Science and Engineering",
   },
   {
